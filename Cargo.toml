@@ -1,0 +1,13 @@
+[package]
+name = "uniq-loader"
+version = "0.1.0"
+edition = "2024"
+authors = ["Maick Wendell <maickwendell@gmail.com>"]
+description = "Universal Modular Bootloader for the UniqX Ecosystem"
+
+[profile.release]
+panic = "abort"    # Se o sistema der pânico, ele apenas para (não tenta desenrolar a pilha)
+lto = true         # Link-Time Optimization: deixa o binário o menor e mais rápido possível
+opt-level = "z"    # Otimiza estritamente para o tamanho do arquivo (para caber em microchips)
+
+[dependencies]
